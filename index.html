@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-weight: 900;
+        }
+
+        form {
+            padding-left: 10px;
+        }
+
+        .mdiv {
+            height: 100vh;
+            width: 100%;
+            background-image: url(https://cdn.pixabay.com/photo/2023/12/04/18/10/lilac-8430051_1280.jpg);
+            position: fixed;
+            top: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calc {
+            width: 300px;
+            height: 400px;
+            margin-left: 60%;
+            /* background-image: linear-gradient(rgb(255, 0, 170)(204, 16, 16),rgb(199, 57, 187),rgb(196, 196, 196)); */
+            padding: 5px;
+            background-image: linear-gradient(rgb(14, 243, 205), rgb(160, 212, 155));
+            border-radius: 30px;
+            box-shadow: 0px 0px 15px rgb(255, 231, 231);
+        }
+
+        .op {
+            text-align: right;
+            width: 100%;
+            background-color: transparent;
+            /* outline: none; */
+            border: none;
+            height: 100px;
+            cursor: text;
+            color: rgb(153, 69, 69);
+            padding-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-shadow: none !important;
+        }
+
+        input {
+            height: 50px;
+            width: 50px;
+            margin: 2px;
+            background-color: #000000;
+            color: rgb(235, 43, 161);
+            font-weight: bolder;
+            border-radius: 50%;
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 14px;
+            margin-top: 4px;
+            font-weight: lighter;
+        }
+
+        input[type="text"] {
+            font-size: larger;
+            color: rgb(12, 12, 12);
+
+        }
+
+        input[type="button"]:hover {
+            color: rgb(255, 0, 64);
+            border: #fff9f9;
+            box-shadow: #fff9f9;
+            text-shadow: 0px 0px 50px white;
+            font-size: larger;
+        }
+
+        .zero {
+            width: 115px;
+            border-radius: 30px;
+        }
+
+        .c {
+            background-color: rgb(241, 246, 250);
+            color: antiquewhite;
+            border-color: rgb(255, 0, 128);
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mdiv">
+        <div class="calc">
+            <form>
+                <div>
+                    <input type="text" name="op" class="op">
+                </div>
+                <div>
+                    <input type="button" name="AC" value="AC" onclick="op.value=''" class="c">
+                    <input type="button" name="C" value="C" onclick="op.value=Math.floor(op.value/10)" class="c">
+                    <input type="button" name="mod" value="%" onclick="op.value+='%'" class="c">
+                    <input type="button" name="operator" value="/" onclick="op.value+='/'" class="c">
+                </div>
+
+                <div>
+                    <input type="button" name="number" value="7" onclick="op.value+='7'" class="">
+                    <input type="button" name="number" value="8" onclick="op.value+='8'" class="">
+                    <input type="button" name="number" value="9" onclick="op.value+='9'" class="">
+                    <input type="button" name="operator" value="X" onclick="op.value+='*'" class="c">
+                </div>
+
+                <div>
+                    <input type="button" name="number" value="4" onclick="op.value+='4'" class="">
+                    <input type="button" name="number" value="5" onclick="op.value+='5'" class="">
+                    <input type="button" name="number" value="6" onclick="op.value+='6'" class="">
+                    <input type="button" name="operator" value="-" onclick="op.value+='-'" class="c">
+                </div>
+
+                <div>
+                    <input type="button" name="number" value="1" onclick="op.value+='1'" class="">
+                    <input type="button" name="number" value="2" onclick="op.value+='2'" class="">
+                    <input type="button" name="number" value="3" onclick="op.value+='3'" class="">
+                    <input type="button" name="operator" value="+" onclick="op.value+='+'" class="c">
+                </div>
+
+                <div>
+                    <input type="button" name="number" value="0" onclick="op.value+='0'" class="zero">
+                    <input type="button" name="number" value="." onclick="op.value+='.'" class="">
+                    <input type="button" name="number" value="=" onclick="op.value=eval(op.value)" class="c">
+
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
